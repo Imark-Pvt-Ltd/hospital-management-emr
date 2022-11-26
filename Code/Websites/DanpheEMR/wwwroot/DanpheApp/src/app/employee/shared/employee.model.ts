@@ -66,7 +66,7 @@ export class Employee {
   public DepartmentName: string = null; //sud:24Oct'19--Used Only in Cient Side.
 
   public TDSPercent: number = 0; //pratik:14April'2020
-  public PANNumber: string = null; //pratik:14April'2020
+  //public PANNumber: string = null; //pratik:14April'2020 <!-- Removed Pan NO: Display:None , As per Change Request of Francis, Kenya 2022-->
   public IsIncentiveApplicable: boolean = false; //pratik:14April'2020
 
   constructor() {

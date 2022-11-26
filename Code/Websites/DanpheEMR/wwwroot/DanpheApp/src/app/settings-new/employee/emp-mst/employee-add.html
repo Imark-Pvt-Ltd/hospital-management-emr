@@ -114,7 +114,7 @@
                         [hidden]="CurrentEmployee.IsValidCheck('Gender','required')"> Gender is required</span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div style="display: none;" class="form-group"><!-- Display:None , As per Change Request of Francis, Kenya-->
                     <label class="control-label col-md-4">NMC No<b>:</b></label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" maxlength="20" formControlName="MedCertificationNo"
@@ -124,7 +124,7 @@
                         proper</span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div  style="display: none;" class="form-group"><!-- Display:None , As per Change Request of Francis, Kenya-->
                     <label class="control-label col-md-4">NNC No<b>:</b></label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" maxlength="20" formControlName="NursingCertificationNo"
@@ -134,7 +134,7 @@
                         proper</span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div style="display: none;" class="form-group"> <!-- Display:None , As per Change Request of Francis, Kenya-->
                     <label class="control-label col-md-4">NHPC No<b>:</b></label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" maxlength="20"
@@ -146,7 +146,7 @@
                         is not proper</span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div  class="form-group">
                     <label class="control-label col-md-4">Contact Number<b>:</b></label>
                     <div class="col-md-8">
                       <input class="form-control" maxlength="10" [ngModelOptions]="{standalone: true}"
@@ -259,7 +259,7 @@
                         [ngModelOptions]="{standalone: true}"></textarea>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div style="display: none;" class="form-group"> <!-- Display:None , As per Change Request of Francis, Kenya-->
                     <label class="control-label col-md-4">PAN Number<b>:</b></label>
                     <div class="col-md-8">
                       <input class="form-control" type="text" onClick="this.select();"
