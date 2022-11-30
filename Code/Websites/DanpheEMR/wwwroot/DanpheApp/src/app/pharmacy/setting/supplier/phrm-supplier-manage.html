@@ -57,12 +57,12 @@
                   </div>
 
                 </div>
-                <div class="form-group col-md-6">
+                <div style="display: none;" class="form-group col-md-6">  <!--As per Change Request of Francis, Kenya-->
 
                   <label class="control-label col-md-4">Pan No.<sup>*</sup><b>:</b></label>
                   <div class="col-md-8">
                     <input id="supplierpan" class="form-control" type="text" maxlength="30" (keyup.enter)="setFocusById('supplierdda')" [(ngModel)]="CurrentSupplier.PANNumber" formControlName="PANNumber" value="" placeholder="Enter Pan No." />
-                    <span class="color-red font-sm" [hidden]="CurrentSupplier.IsValidCheck('PANNumber','required') || !(CurrentSupplier.IsDirty('PANNumber'))">Pan No. is required</span>
+                    <!--<span class="color-red font-sm" [hidden]="CurrentSupplier.IsValidCheck('PANNumber','required') || !(CurrentSupplier.IsDirty('PANNumber'))">Pan No. is required</span> -->
                     <!-- <span class="color-red font-sm" *ngIf="CurrentSupplier.IsDirty('PANNumber')" [hidden]="CurrentSupplier.IsValidCheck('PANNumber','pattern')"> Pan No. is not proper</span> -->
                   </div>
                 </div>

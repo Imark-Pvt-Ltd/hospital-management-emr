@@ -30,7 +30,7 @@ export default class PHRMGridColumns {
         { headerName: "ContactNo", field: "ContactNo", width: 100 },
         { headerName: "Description", field: "Description", width: 100 },
         { headerName: "City", field: "City", width: 100 },
-        { headerName: "Pan No.", field: "PANNumber", width: 100 },
+       // { headerName: "Pan No.", field: "PANNumber", width: 100 }, <!--As per Change Request of Francis, Kenya-->
         { headerName: "ContactAddress", field: "ContactAddress", width: 100 },
         { headerName: "Email", field: "Email", width: 100, cellStyle: PHRMGridColumns.UserGridCellStyle },
         { headerName: "CreditPeriod", field: "CreditPeriod", width: 100 },
@@ -91,7 +91,7 @@ export default class PHRMGridColumns {
         { headerName: "ContactNo", field: "ContactNo", width: 100 },
         { headerName: "Description", field: "StoreDescription", width: 80 },
         { headerName: "Label", field: "StoreLabel", width: 100 },
-        { headerName: "PAN", field: "PanNo", width: 100 },
+        //{ headerName: "PAN", field: "PanNo", width: 100 },<!--As per Change Request of Francis, Kenya-->
         { headerName: "Address", field: "Address", width: 100 },
         { headerName: "Email", field: "Email", width: 100, cellStyle: PHRMGridColumns.UserGridCellStyle },
         { headerName: "Default Payment Mode", field: "DefaultPaymentMode", width: 100 },

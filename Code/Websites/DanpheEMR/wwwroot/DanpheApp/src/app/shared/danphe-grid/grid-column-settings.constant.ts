@@ -1972,7 +1972,7 @@ return template;
     { headerName: "Contact Person", field: "ContactPerson", width: 120 },
     { headerName: "Contact Address", field: "ContactAddress", width: 120 },
     { headerName: "Contact Number", field: "ContactNo", width: 150 },
-    { headerName: "Pan No", field: "PanNo", width: 150 },
+    //{ headerName: "Pan No", field: "PanNo", width: 150 },<!--As per Change Request of Francis, Kenya-->
     {
       headerName: "Email Address",
       field: "Email",
@@ -4275,7 +4275,7 @@ Department:` +
     { headerName: "Address", field: "Address" },
     { headerName: "Telephone", field: "Telephone" },
     { headerName: "Email", field: "Email" },
-    { headerName: "PAN", field: "PAN" },
+    //{ headerName: "PAN", field: "PAN" }, <!--As per Change Request of Francis, Kenya-->
     { headerName: "DDA", field: "DDA" },
     { headerName: "Header Description", field: "HeaderDescription" },
     {

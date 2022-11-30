@@ -44,7 +44,7 @@ export class VendorsModel {
       'CreditPeriod': ['', Validators.compose([Validators.pattern('^[0-9]*')])],
       'ContactNo': ['', Validators.compose([Validators.required])],
       'DefaultCurrencyId': ['', Validators.compose([Validators.required])],
-      'PanNo': ['', Validators.required],
+     // 'PanNo': ['', Validators.required], <!-- As per Change Request of Francis, Kenya-->
       'CountryId': ['', Validators.compose([Validators.required])],
       'VendorCode': ['', Validators.compose([Validators.required])],
       'BankDetails': [''],

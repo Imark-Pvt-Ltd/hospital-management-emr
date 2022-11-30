@@ -166,6 +166,7 @@ export class Patient {
     //Anjana :14May'21, Required to show municipality 
     public MunicipalityId: number = 0;
     public MunicipalityName: string = null;
+    //public SpecialNotes: string = null;
 
     constructor() {
         var _formBuilder = new FormBuilder();
@@ -184,7 +185,7 @@ export class Patient {
             'LandLineNumber': ['', Validators.compose([Validators.pattern('^[0-9]{1,9}$')])],
             'CountryId': ['', Validators.required],
             //'Address': ['', Validators.required],
-            'PANNumber': ['', Validators.compose([ Validators.maxLength(20)])],
+            //'PANNumber': ['', Validators.compose([Validators.maxLength(20)])], <!--As per Change Request of Francis, Kenya 2022-->
             //'MembershipTypeId': ['', Validators.required],
         });
 

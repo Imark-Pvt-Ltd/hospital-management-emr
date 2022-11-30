@@ -105,14 +105,14 @@
                         [hidden]="CurrentVendor.IsValidCheck('ContactNo','maxlength')"> Must be Under 10 digits</span>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div style="display: none;" class="form-group"> <!-- Display:None , As per Change Request of Francis, Kenya-->
                     <label class="control-label col-md-5">Pan No<b>:</b><sup class="color-red">*</sup></label>
                     <div class="col-md-7">
                       <input class="form-control" maxlength="50" type="text" [(ngModel)]="CurrentVendor.PanNo"
                         formControlName="PanNo" id="txtPanNo" placeholder="Pan Number"
                         (keyup.enter)="FocusElementById('AssignItemIdToVendor')" />
-                      <span class="color-red font-sm" *ngIf="CurrentVendor.IsDirty('PanNo')"
-                        [hidden]="CurrentVendor.IsValidCheck('PanNo','required')">PanNo is required.</span>
+                      <!--<span class="color-red font-sm" *ngIf="CurrentVendor.IsDirty('PanNo')"
+                        [hidden]="CurrentVendor.IsValidCheck('PanNo','required')">PanNo is required.</span>--> <!--As per Change Request of Francis, Kenya -->
                     </div>
                   </div>
 

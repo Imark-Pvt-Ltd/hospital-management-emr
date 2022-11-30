@@ -2230,7 +2230,7 @@ export class ReportGridColumnSettings {
     { headerName: "VendorName", field: "VendorName", width: 110 },
     { headerName: "Contact No", field: "ContactNo", width: 200 },
     //{ headerName: "City", field: "City", width: 150 },
-    { headerName: "Pan No.", field: "PanNo", width: 150 },
+   // { headerName: "Pan No.", field: "PanNo", width: 150 },<!--As per Change Request of Francis, Kenya-->
   { headerName: "ContactAddress", field: "ContactAddress", width: 150 },
     { headerName: "Email", field: "Email", width: 150 },
   ]

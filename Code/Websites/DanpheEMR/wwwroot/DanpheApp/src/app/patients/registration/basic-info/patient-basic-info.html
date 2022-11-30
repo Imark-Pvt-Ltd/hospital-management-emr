@@ -96,8 +96,8 @@
                   <input class="form-control"
                     (keyup.enter)="isPhoneNumberMandatory?GoToNextInput('PhoneNumber'):GoToNextInput('ddlDistrict')"
                     type="number" min="0" max="150" id="Age" formControlName="Age" onclick="this.select()"
-                    (focusout)="CalculateDob();" [(ngModel)]="model.Age" placeholder="Age" style="padding-right:0px;" 
-                    (wheel)="coreService.PreventNumberChangeOnScroll($event)"/>
+                    (focusout)="CalculateDob();" [(ngModel)]="model.Age" placeholder="Age" style="padding-right:0px;"
+                    (wheel)="coreService.PreventNumberChangeOnScroll($event)" />
                 </div>
                 <div class="col-md-9" style="padding-right: 0px;">
                   <div class="input-group">
@@ -150,8 +150,9 @@
             <div class="form-group">
               <label class="control-label col-md-4">Country<sup>*</sup><b>:</b></label>
               <div class="col-md-8">
-                <select id="ddlCountry" class="form-control" (change)="GoToNextInput('ddlDistrict')" [(ngModel)]="model.CountryId"
-                  formControlName="CountryId" (ngModelChange)="GetCountrySubDivision();DistrictChanged()">
+                <select id="ddlCountry" class="form-control" (change)="GoToNextInput('ddlDistrict')"
+                  [(ngModel)]="model.CountryId" formControlName="CountryId"
+                  (ngModelChange)="GetCountrySubDivision();DistrictChanged()">
                   <option *ngFor="let Country of Countries" value="{{Country.CountryId}}">{{Country.CountryName}}
                   </option>
                 </select>
@@ -196,10 +197,10 @@
       placeholder="Address" /> -->
 
                 <input danphe-auto-complete class="form-control" [ngModelOptions]="{standalone: true}" id="Address"
-                  [(ngModel)]="model.Address" [source]="olderAddressList" placeholder="Address" (keyup.enter) = "GoToNextInput('regPatientSubmitBtn')"
-                  display-property-name="PatAddress" value-property-name=null no-match-found-text=" "
-                  onClick="this.select();" min-chars="2" style="text-transform: capitalize;"
-                  [grid-sort]="'sortonbasicdatatype'" max-num-list="10" />
+                  [(ngModel)]="model.Address" [source]="olderAddressList" placeholder="Address"
+                  (keyup.enter)="GoToNextInput('regPatientSubmitBtn')" display-property-name="PatAddress"
+                  value-property-name=null no-match-found-text=" " onClick="this.select();" min-chars="2"
+                  style="text-transform: capitalize;" [grid-sort]="'sortonbasicdatatype'" max-num-list="10" />
               </div>
             </div>
             <div class="form-group">
@@ -235,8 +236,8 @@
                       <span></span>Other </label>
                   </div> -->
 
-                  <select class="form-control" [(ngModel)]="model.Gender"
-                    (change)="GoToNextInput('Age')" id="Gender" formControlName="Gender">
+                  <select class="form-control" [(ngModel)]="model.Gender" (change)="GoToNextInput('Age')" id="Gender"
+                    formControlName="Gender">
                     <option value="null" selected disabled>--select--</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -250,7 +251,8 @@
             <div class="form-group">
               <membership-select *ngIf="isPatientInfoLoaded" [show-community]="membershipSchemeParam.ShowCommunity"
                 [selected-id]="model.MembershipTypeId" (on-membership-change)="OnMembershipChanged($event)"
-                [is-mandatory]="membershipSchemeParam.IsMandatory" (on-enter-key-pressed)="onEnterKeyPressedFromMembership($event)"> </membership-select>
+                [is-mandatory]="membershipSchemeParam.IsMandatory"
+                (on-enter-key-pressed)="onEnterKeyPressedFromMembership($event)"> </membership-select>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">Caste/Ethnic Group<b>:</b></label>
@@ -332,31 +334,35 @@
                   placeholder="race" />
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label class="control-label col-md-4">PAN Number<b>:</b></label>
               <div class="col-md-8">
                 <input class="form-control" type="text" [(ngModel)]="model.PANNumber" formControlName="PANNumber"
                   placeholder="PAN Number" id="txtPanNumber"/>
                 <span class="error-msg" *ngIf="model.IsDirty('PANNumber')"
                   [hidden]="model.IsValidCheck('PANNumber','pattern')">PAN number is not proper</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-4">Dialysis Patient<b>:</b></label>
-              <div class="col-md-8">
-                <div class="input-group">
-                  <div class="icheck-inline">
-                    <label class="mt-checkbox mt-checkbox-outline">
-                      <input type="checkbox" [(ngModel)]="model.IsDialysis" (ngModelChange)="OnSelectDialysis()"
-                        [ngModelOptions]="{standalone: true}">
-                      <span></span>Yes </label>
-                  </div>
+              </div> -->
+            <!--As per Change Request of Francis, Kenya-->
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4">Dialysis Patient<b>:</b></label>
+            <div class="col-md-8">
+              <div class="input-group">
+                <div class="icheck-inline">
+                  <label class="mt-checkbox mt-checkbox-outline">
+                    <input type="checkbox" [(ngModel)]="model.IsDialysis" (ngModelChange)="OnSelectDialysis()"
+                      [ngModelOptions]="{standalone: true}">
+                    <span></span>Yes </label>
                 </div>
-                <span class="error-msg" *ngIf="model.IsDirty('Gender')"
-                  [hidden]="model.IsValidCheck('Gender','required')"> Gender is required</span>
               </div>
+              <span class="error-msg" *ngIf="model.IsDirty('Gender')"
+                [hidden]="model.IsValidCheck('Gender','required')"> Gender is required</span>
             </div>
           </div>
+          <!-- <div>
+              <label class="control-label col-md-4">Special Notes <b>:</b></label>
+               <input [(ngModel)]="model.SpecialNotes" type="text" [ngModelOptions]="{standalone: true}"/>
+            </div> -->
         </div>
       </div>
     </form>

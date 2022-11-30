@@ -31,7 +31,7 @@ export class PHRMSupplierModel {
             'SupplierName': ['', Validators.compose([Validators.required, Validators.maxLength(50)])],
             'ContactNo': ['', Validators.compose([Validators.required, Validators.pattern('^[+0-9-]{1,10}$')])],
             // 'PANNumber': ['', Validators.compose([Validators.required, Validators.pattern('^[0-9-]{1,9}$')])],
-            'PANNumber': ['', Validators.compose([Validators.required])],
+            'PANNumber': [''],
             'ContactAddress': ['', Validators.required],
             'Email': ['', Validators.pattern('^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$')]
         });

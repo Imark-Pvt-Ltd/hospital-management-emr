@@ -112,6 +112,7 @@ export class PatientService {
 
 
     pat.WardName = currPatient.WardName;
+    //pat.SpecialNotes=currPatient.SpecialNotes;
 
   }
   //ashim: 22Aug2018
