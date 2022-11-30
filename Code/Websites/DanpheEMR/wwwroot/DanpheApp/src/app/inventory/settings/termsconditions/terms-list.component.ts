@@ -22,22 +22,34 @@ export class TermsListComponent {
     public allTermsLists: Array<TermsConditionsMasterModel> = new Array<TermsConditionsMasterModel>();
     public selTermslist: Array<TermsConditionsMasterModel> = new Array<TermsConditionsMasterModel>();
 
-    public TermsApplicationId: number = ENUM_TermsApplication.Inventory; 
+    public TermsApplicationId: number = ENUM_TermsApplication.Inventory;
 
     constructor(public changeDetector: ChangeDetectorRef,
         public messageBoxService: MessageboxService,
         private _route: ActivatedRoute,
         private _http: HttpClient) {
         this.TermsGridColumns = GridColumnSettings.TermsConditionsList
+        this.getTermsApplicationIdFromRoute();
     }
+
+    private getTermsApplicationIdFromRoute() {
+        let queryParamValue = this._route.snapshot.paramMap.get('id');
+        if (queryParamValue) {
+            const termsAppId = parseInt(queryParamValue);
+            if (Object.values(ENUM_TermsApplication).includes(termsAppId)) {
+                this.TermsApplicationId = termsAppId;
+            }
+        }
+    }
+
     ngOnInit() {
-            this.getTermsList();
+        this.getTermsList();
     }
 
     /*sanjit: 18May'20 : this component is used in both inventory and pharmacy and there is no service that is shared by these two module,
     hence, I have written the api call directly here.*/
     public getTermsList() {
-        this._http.get<any>("/api/InventorySettings/GetTermsListByTermsApplicationId/"+ this.TermsApplicationId)
+        this._http.get<any>("/api/InventorySettings/GetTermsListByTermsApplicationId/" + this.TermsApplicationId)
             .subscribe(res => {
                 if (res.Status == "OK") {
                     this.allTermsLists = res.Results;
@@ -47,8 +59,8 @@ export class TermsListComponent {
                     console.log("Failed ! " + res.ErrorMessage);
                 }
 
-            },err =>{
-                this.messageBoxService.showMessage("Failed",[err.error.ErrorMessage])
+            }, err => {
+                this.messageBoxService.showMessage("Failed", [err.error.ErrorMessage])
             });
     }
 

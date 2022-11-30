@@ -462,5 +462,5 @@ now commenting code for fixing
 -->
 <vendor-add *ngIf="showAddVendorPopUp" [showAddPage]="showAddVendorPopUp" (callback-add)="OnNewVendorAdded($event)">
 </vendor-add>
-<terms-add *ngIf="showAddTermsPopUp" [showAddPage]="showAddTermsPopUp" (callback-add)="OnNewTermsAdded($event)">
+<terms-add *ngIf="showAddTermsPopUp" [showAddPage]="showAddTermsPopUp" [TermsApplicationId]="inventoryTermsApplicationId"(callback-add)="OnNewTermsAdded($event)">
 </terms-add>

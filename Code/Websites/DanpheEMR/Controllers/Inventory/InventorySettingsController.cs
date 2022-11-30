@@ -323,7 +323,9 @@ namespace DanpheEMR.Controllers
                 //posting to inventory terms & conditions 
                 else if (reqType == "PostInventoryTerms")
                 {
+                    var currentUser = HttpContext.Session.Get<RbacUser>("currentuser");
                     InventoryTermsModel termsconditions = DanpheJSONConvert.DeserializeObject<InventoryTermsModel>(str);
+                    termsconditions.CreatedBy = currentUser.EmployeeId;
                     termsconditions.CreatedOn = System.DateTime.Now;
                     inventoryDBContext.InventoryTerms.Add(termsconditions);
                     inventoryDBContext.SaveChanges();

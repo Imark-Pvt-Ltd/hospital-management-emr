@@ -77,8 +77,8 @@ export class TermsAddComponent implements OnInit {
                 return;
             }
             this.loading = true;
-            //this.CurrentTermsModel.TermsApplicationEnumId = this.TermsApplicationId;//needs revision..
-            this.CurrentTermsModel.TermsApplicationEnumId = ENUM_TermsApplication.Inventory;
+            this.CurrentTermsModel.TermsApplicationEnumId = this.TermsApplicationId;//needs revision..
+            // this.CurrentTermsModel.TermsApplicationEnumId = ENUM_TermsApplication.Inventory;
             var temp = _.omit(this.CurrentTermsModel, ['TermsValidators']);
             temp = JSON.stringify(temp);
             /*sanjit: 18May'20 : this component is used in both inventory and pharmacy and 
@@ -92,6 +92,11 @@ export class TermsAddComponent implements OnInit {
                             this.CurrentTermsModel = new TermsConditionsMasterModel();
                             this.CallBackAddTerms(res);
                             this.showTermPage = false;
+                            this.loading = false;
+                        }
+                        else {
+                            this.msgBoxServ.showMessage("Failed", ['Something went wrong!']);
+                            console.error(res.ErrorMessage);
                             this.loading = false;
                         }
                     },

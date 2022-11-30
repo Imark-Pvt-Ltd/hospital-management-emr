@@ -49,7 +49,7 @@ export class PurchaseOrderAddComponent implements AfterViewInit {
 
   public POCategories: string[] = [];
   public poFormParameterValue: any;
-
+  public inventoryTermsApplicationId: number = ENUM_TermsApplication.Inventory;
 
   constructor(public procurementBLService: ProcurementBLService, public inventoryService: InventoryService, public coreService: CoreService, public changeDetectorRef: ChangeDetectorRef, public messageBoxService: MessageboxService, public securityService: SecurityService, public invSettingBL: InventorySettingBLService, public router: Router, public route: ActivatedRoute, private _activateInventoryService: ActivateInventoryService) {
     this.LoadTermsList();
