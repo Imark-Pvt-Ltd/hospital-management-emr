@@ -148,13 +148,13 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <p> User collection on <b>{{counterDayDate}} ({{counterDayDate | nepaliDate}})</b> </p>
+              <p> User collection on <b>{{counterDayDate}} </b> </p>
               <div *ngFor="let usr of userDayCollection" style="padding-top:15px; padding-bottom:10px">
                 <h4 class="label label-success">{{usr.EmployeeName}}</h4>
                 <b>:  {{usr.UserDayCollection}}</b> </div>
             </div>
             <div class="col-md-6">
-              <p> Counter collection on <b>{{counterDayDate}} ({{counterDayDate | nepaliDate}})</b> </p>
+              <p> Counter collection on <b>{{counterDayDate}} </b> </p>
               <div *ngFor="let cntr of counterDayCollection" style="padding-top:15px; padding-bottom:10px">
                 <h4 class="label label-success">{{cntr.CounterName}}</h4>
                 <b>:  {{cntr.CounterDayCollection}}</b> </div>

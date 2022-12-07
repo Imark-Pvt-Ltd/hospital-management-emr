@@ -46,7 +46,7 @@
 <div class="row" *ngIf="showRequisitionList">
   <div class="col-lg-12 col-sm-12">
     <danphe-grid [grid-colDefaults]="SubstoreAssetRequisitionGridColumns" [grid-data]="RequisitionGridDataFiltered"
-      [show-CustomDate]="true" [rangeType]="dateRange" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+      [show-CustomDate]="true" [rangeType]="dateRange" 
       (grid-actions)="RequisitionGridAction($event)" (onDateChange)="onDateChange($event)"> </danphe-grid>
   </div>
 </div>
@@ -115,7 +115,7 @@
                   <p class="media-body small border-bottom border-gray">
                     <strong>Requisition Date:</strong>
                     {{Requisition.RequisitionDate | date : 'yyyy-MM-dd'}}&nbsp;
-                    <i *ngIf="Requisition.RequisitionDate">({{Requisition.RequisitionDate | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+                    
                   </p>
                   <p class="media-body small border-bottom border-gray">
                     <strong>Requisition Status:</strong>
@@ -137,7 +137,7 @@
                       <strong>Dispatched On:</strong>
                       <div *ngIf="!!dispatch.ReceivedOn; else elseBlockTwo">
                         {{dispatch.ReceivedOn | date : "yyyy-MM-dd"}}
-                        <i *ngIf="dispatch.ReceivedOn">({{dispatch.ReceivedOn | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+                       
                       </div>
                       <ng-template #elseBlockTwo>Not Received</ng-template>
                     </span>

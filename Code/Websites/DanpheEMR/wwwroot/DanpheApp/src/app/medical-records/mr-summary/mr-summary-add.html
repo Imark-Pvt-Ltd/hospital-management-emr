@@ -256,8 +256,8 @@
                         <label class="control-label lbl-text">Inpateint Date</label>
                       </div>
                       <div class="col-md-7">
-                        <label for="inpatientDate" class="cstm-field-ip">{{patientDetail.AdmittedDate | nepaliDate}}
-                          &nbsp;&nbsp;({{patientDetail.AdmittedDate | DanpheDateTime:'format':'YYYY-MM-DD'}}AD)</label>
+                        <label for="inpatientDate" class="cstm-field-ip">
+                          {{patientDetail.AdmittedDate | DanpheDateTime:'format':'YYYY-MM-DD'}} &nbsp;AD</label>
 
                       </div>
                     </div>
@@ -266,9 +266,9 @@
                         <label class="control-label lbl-text">Discharged Date</label>
                       </div>
                       <div class="col-md-7">
-                        <label class="cstm-field-ip">{{patientDetail.DischargedDate | nepaliDate}}
-                          &nbsp;&nbsp;({{patientDetail.DischargedDate | DanpheDateTime:'format':'YYYY-MM-DD'}}
-                          &nbsp;AD)</label>
+                        <label class="cstm-field-ip">
+                          {{patientDetail.DischargedDate | DanpheDateTime:'format':'YYYY-MM-DD'}}
+                          &nbsp;AD</label>
                       </div>
                     </div>
                     <div class="row margin-8-tp">

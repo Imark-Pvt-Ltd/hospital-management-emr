@@ -43,7 +43,7 @@
     <div class="col-lg-12 col-sm-12" *ngIf="ReturnBillData.length>0">
       <danphe-grid [grid-colDefaults]="ReturnBillColumns" [grid-data]="ReturnBillData"
         [grid-exportOptions]="gridExportOptions" [show-print-button]="showPrintButton" [grid-showExport]="true"
-        [report-for]="'billing'" [grid-date-range]="dateRange" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+        [report-for]="'billing'" [grid-date-range]="dateRange" 
         (grid-actions)="ReturnBillGridActions($event)" [grid-footer-content]="footerContent">
       </danphe-grid>
     </div>

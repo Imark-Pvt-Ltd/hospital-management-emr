@@ -8,6 +8,7 @@ import { InventoryBLService } from "../shared/inventory.bl.service";
 import { MessageboxService } from "../../shared/messagebox/messagebox.service";
 import { SecurityService } from "../../security/shared/security.service";
 import { NepaliDateInGridColumnDetail, NepaliDateInGridParams } from "../../shared/danphe-grid/NepaliColGridSettingsModel";
+import * as moment from "moment";
 @Component({
   templateUrl: "./stock-list.component.html"
 })
@@ -31,6 +32,9 @@ export class StockListComponent {
         if (res.Status == "OK" && res.Results && res.Results.length > 0) {
           this.stockList = res.Results;
           this.filteredStockList = this.stockList;
+          this.filteredStockList.forEach(x=>{
+            moment(x.ReceiptDate).format('YYYY-MM-DD');
+          })
           this.CanUserCanManageStock();
           this.FilterStockListForZeroQty();
         }

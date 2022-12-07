@@ -91,7 +91,7 @@
                   <div class="text-center bill-head" style="text-align: center;font-family:sans-serif; margin-top: 10px;">
                     <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                     <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                    <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{ headerDetail.tel}}</span><br />
+                    <span style="font-size:13px;"> Tel: {{ headerDetail.tel}}</span><br />
                     <span style="font-size:15px;"><strong> Inventory Unit </strong></span><br />
                   </div>
                 </div>
@@ -115,8 +115,8 @@
             <div class="right" style="text-align:right;">
               <div>
                 PRF Date:<b> {{PurchaseRequestVM.PurchaseRequest.RequestDate | date : 'yyyy-MM-dd'}}</b>&nbsp;&nbsp;
-                <i *ngIf="PurchaseRequestVM.PurchaseRequest.RequestDate">({{PurchaseRequestVM.PurchaseRequest.RequestDate | nepaliDate:'format':'YYYY-MM-DD'}}
-                  BS )</i>
+                <!-- <i *ngIf="PurchaseRequestVM.PurchaseRequest.RequestDate">({{PurchaseRequestVM.PurchaseRequest.RequestDate | nepaliDate:'format':'YYYY-MM-DD'}}
+                  BS )</i> -->
               </div>
             </div>
 

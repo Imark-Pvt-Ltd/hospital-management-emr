@@ -934,7 +934,9 @@ export default class GridColumnSettings {
       width: 80,
       cellRenderer: GridColumnSettings.AgeSexRendererPatient,
     },
-    { headerName: "Requested On", field: "RequisitionDate", width: 130 },
+    { headerName: "Requested On", field: "RequisitionDate", width: 130 ,
+      cellRenderer: GridColumnSettings.RequisitionDateOnlyRenderer
+  },
     { headerName: "Item", field: "ItemName", width: 110 },
     { headerName: "Status", field: "OrderStatus", width: 80 },
     { headerName: "Total Amount", field: "TotalAmount", width: 75 },
@@ -1359,7 +1361,8 @@ return template;
     {
       headerName: "Dispatch Date",
       field: "CreatedOn",
-      cellRenderer: GridColumnSettings.DispatchDateRender,
+      // cellRenderer: GridColumnSettings.DispatchDateRender,
+      cellRenderer: GridColumnSettings.DateOnlyRenderer,
       width: 100,
     },
     { headerName: "Received By", field: "ReceivedBy", width: 100 },
@@ -1434,7 +1437,8 @@ return template;
   }
   static StockDetails = [
     { headerName: "GR No", field: "GoodsReceiptNo", width: 150 },
-    { headerName: "Bill Date", field: "GoodsReceiptDate", width: 150 },
+    { headerName: "Bill Date", field: "GoodsReceiptDate", width: 150, 
+        cellRenderer:GridColumnSettings.GRDateTimeRenderer},
     { headerName: "Batch No", field: "BatchNo", width: 150 },
     { headerName: "Available Quantity", field: "AvailQuantity", width: 150 },
     { headerName: "Unit Price", field: "ItemRate", width: 150 },
@@ -1755,6 +1759,7 @@ return template;
       headerName: "Date",
       field: "Date",
       width: 80,
+      
     },
     { headerName: "Invoice No", field: "ReceiptNo", width: 60 },
     { headerName: "Hospital No", field: "PatientCode", width: 70 },
@@ -3031,7 +3036,7 @@ return template;
       headerName: "Recorded On",
       field: "CreatedOn",
       width: 80,
-      //cellRenderer: GridColumnSettings.TemplateListDateRenderer,
+      cellRenderer: GridColumnSettings.TemplateListDateRenderer,
     },
     { headerName: "Primary Doctor", field: "PrimaryDoctor", width: 100 },
     { headerName: "Template Type", field: "TemplateName", width: 110 },
@@ -3566,6 +3571,11 @@ return template;
     let time: string = params.data.VisitTime;
     return moment(time, "hhmm").format("hh:mm A");
   }
+
+  static DateOnlyRenderer(params) {
+    let date: string = params.data.CreatedOn;
+    return moment(date).format("YYYY-MM-DD");
+  }
   static VisitDateOnlyRenderer(params) {
     let date: string = params.data.VisitDate;
     return moment(date).format("YYYY-MM-DD");
@@ -3891,6 +3901,12 @@ Cancelled By: ${CancelledBy} ">Details
     let date: string = params.data.CreatedOn;
     return moment(date).format("YYYY-MM-DD");
   }
+   //trying to build a common dateOnlyRenderer
+  // static DanpheDateOnlyRenderer(columnName: string, params?){
+  //   let date: string = params.data[columnName];
+  //   return moment(date).format("YYYY-MM-DD");
+  // }
+
   static RequisitionDateOnlyRenderer(params) {
     let date: string = params.data.RequisitionDate;
     return moment(date).format("YYYY-MM-DD");

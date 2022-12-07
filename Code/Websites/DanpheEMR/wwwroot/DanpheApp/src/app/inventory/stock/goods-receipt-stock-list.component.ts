@@ -17,7 +17,7 @@ export class GoodsReceiptStockListComponent {
   public fromDate: any;
   public toDate: any;
   public goodsreceiptGridColumns: Array<any> = null;
-  public NepaliDateInGridSettings: NepaliDateInGridParams = new NepaliDateInGridParams();
+  // public NepaliDateInGridSettings: NepaliDateInGridParams = new NepaliDateInGridParams();
   public grListfiltered: Array<GoodsReceipt> = new Array<GoodsReceipt>();
   public dateRange: string = null;
 
@@ -31,7 +31,7 @@ export class GoodsReceiptStockListComponent {
 
   ) {
     this.goodsreceiptGridColumns = GridColumnSettings.GRSList;
-    this.NepaliDateInGridSettings.NepaliDateColumnList.push(...[new NepaliDateInGridColumnDetail('GoodsReceiptDate'),new NepaliDateInGridColumnDetail('VendorBillDate')]);
+    // this.NepaliDateInGridSettings.NepaliDateColumnList.push(...[new NepaliDateInGridColumnDetail('GoodsReceiptDate'),new NepaliDateInGridColumnDetail('VendorBillDate')]);
     this.dateRange = 'None'; //means last 1 month
   }
 

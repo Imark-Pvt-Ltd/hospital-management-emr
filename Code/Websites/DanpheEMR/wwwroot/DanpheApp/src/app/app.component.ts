@@ -138,12 +138,12 @@ export class AppComponent {
     this.coreService.getCalenderDatePreference().subscribe(res => {
       this.coreService.SetCalenderDatePreference(res);
       if (this.coreService.DatePreference != "") {
-        if (this.coreService.DatePreference == 'np') {
-          this.DatePreferenceData('np');
-        }
-        else {
+        // if (this.coreService.DatePreference == 'np') {
+        //   this.DatePreferenceData('np');
+        // }
+        // else {
           this.DatePreferenceData('en');
-        }
+        // }
       }
     });
     //set qz-tray config setting and all
@@ -438,31 +438,32 @@ export class AppComponent {
     this.showDatePopup = false;
   }
   ChangeDatePreference(e) {
-    if (e.target.name == "AD") {
+    // if (e.target.name == "AD") {
       this.DatePreferenceData('en');
       this.msgBoxServ.showMessage('notice', ['Default English (AD) calendar preference is saved locally. If you want to store permanently click on save']);
-    }
-    else if (e.target.name == "BS") {
-      this.DatePreferenceData('np');
-      this.msgBoxServ.showMessage('notice', ['Default Nepali (BS) calendar preference is saved locally. If you want to store permanently click on save']);
-    }
+    // }
+    // else if (e.target.name == "BS") {
+    //   this.DatePreferenceData('np');
+    //   this.msgBoxServ.showMessage('notice', ['Default Nepali (BS) calendar preference is saved locally. If you want to store permanently click on save']);
+    // }
 
   }
   DatePreferenceData(type) {
-    if (type == 'np') {
-      this.empPre.en = false;
-      this.empPre.np = true;
-      this.selectedDatePref = "np";
-      this.defaultCal = "Nepali (BS)";
-      this.coreService.DatePreference = type;
-    }
-    else {
+    // if (type == 'np') {
+    //   this.empPre.en = false;
+    //   this.empPre.np = true;
+    //   this.selectedDatePref = "np";
+    //   // this.defaultCal = "Nepali (BS)";
+    //   this.defaultCal = "English (AD)";
+    //   this.coreService.DatePreference = type;
+    // }
+    // else {
       this.empPre.np = false;
       this.empPre.en = true;
       this.selectedDatePref = "en";
       this.defaultCal = "English (AD)";
       this.coreService.DatePreference = type;
-    }
+    // }
   }
 
   SaveEmpPref() {

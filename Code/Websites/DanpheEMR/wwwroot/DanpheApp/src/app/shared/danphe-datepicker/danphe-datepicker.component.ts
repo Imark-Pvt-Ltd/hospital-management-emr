@@ -55,7 +55,7 @@ export class DatePickerComponent implements ControlValueAccessor,OnChanges {
   public onChange: any = Function.prototype; // Trascend the onChange event
   public onTouched: any = Function.prototype; // Trascend the onTouch event
 
-  public showNpCalendar: boolean = false;
+  // public showNpCalendar: boolean = false;  <!--As per Change Request of Francis, Kenya-->
   public showEnCalendar: boolean = false;
 
   //this enDate is send to en-calendar and np-calendar
@@ -180,12 +180,13 @@ export class DatePickerComponent implements ControlValueAccessor,OnChanges {
           this.inputFocusToEnCalendar = true;
           this.changeDetector.detectChanges();
       }
-      else if(this.showNpCalendar){
-          this.inputFocusToNpCalendar = false;
-          this.changeDetector.detectChanges();
-          this.inputFocusToNpCalendar = true;
-          this.changeDetector.detectChanges();
-      }
+      //As per Change Request of Francis, Kenya.
+      // else if(this.showNpCalendar){
+      //     this.inputFocusToNpCalendar = false;
+      //     this.changeDetector.detectChanges();
+      //     this.inputFocusToNpCalendar = true;
+      //     this.changeDetector.detectChanges();
+      // }
     }
   }
 
@@ -262,14 +263,15 @@ export class DatePickerComponent implements ControlValueAccessor,OnChanges {
       this.showChangeBtn = true;
     }
     //whichever is at the first of array should be shown at first.
-    if (calTypesArr[0] == 'en') {
+    //As per Change Request of Francis, Kenya -- hide nepali calender from all places they appears.
+    // if (calTypesArr[0] == 'en') {
       this.showEnCalendar = true;
-      this.showNpCalendar = false;
-    }
-    else if (calTypesArr[0] == 'np') {
-      this.showEnCalendar = false;
-      this.showNpCalendar = true;
-    }
+      // this.showNpCalendar = false;
+    // }
+    // else if (calTypesArr[0] == 'np') {
+    //   this.showEnCalendar = false;
+    //   this.showNpCalendar = true;
+    // }
   }
 
   //converting date from Nepali date to English date
@@ -348,16 +350,16 @@ export class DatePickerComponent implements ControlValueAccessor,OnChanges {
   }
 
   changetoEnglish() {
-    this.showNpCalendar = false;
+    // this.showNpCalendar = false;  --As per Change Request of Francis, Kenya-
     this.changeDetector.detectChanges();
     this.showEnCalendar = true;
   }
 
-  changetoNepali() {
-    this.showEnCalendar = false;
-    this.changeDetector.detectChanges();
-    this.showNpCalendar = true;
-  }
+  // changetoNepali() {  
+  //   this.showEnCalendar = false;
+  //   this.changeDetector.detectChanges();
+  //   this.showNpCalendar = true;
+  // }
 
   loadCommonConfig() {
     if (this.defaultCalenderTypes.length == 0) {

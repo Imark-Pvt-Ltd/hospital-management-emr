@@ -33,7 +33,7 @@
 <div class="row">
   <div class="col-lg-12 col-sm-12">
     <danphe-grid [grid-colDefaults]="ReqForQuotationGridColumns" [grid-data]="ReqForQuotationList"
-      (grid-actions)="ReqForQuotationGridAction($event)" [NepaliDateInGridParams]="NepaliDateInGridSettings"></danphe-grid>
+      (grid-actions)="ReqForQuotationGridAction($event)"></danphe-grid>
   </div>
 </div>
 
@@ -282,7 +282,7 @@
                           style="text-align: center;font-family:sans-serif; margin-top: 10px;">
                           <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                           <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                          <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{
+                          <span style="font-size:13px;"> Tel: {{
                             headerDetail.tel}}</span><br />
                           <span style="font-size:15px;"><strong> Inventory Unit </strong></span><br />
                         </div>

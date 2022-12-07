@@ -4,7 +4,7 @@
       <danphe-grid [grid-colDefaults]="duplicateInvoiceReturnPrintGridColumns" [grid-data]="CreditNoteList"
         [rangeType]="dateRange" (onDateChange)="onGridDateChange($event)" [date-range-options]="'1D,1W,1M,3M'"
         [show-CustomDate]="true" (grid-actions)="DuplicateInvoiceReturnGridActions($event)" [show-print-button]="false"
-        [NepaliDateInGridParams]="NepaliDateInGridSettings">
+        >
       </danphe-grid>
     </div>
   </div>

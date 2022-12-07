@@ -32,6 +32,8 @@ export class HomeMedicationAddComponent {
     @Output("callback-addupdate")
     public callbackAddUpdate: EventEmitter<Object> = new EventEmitter<Object>();
 
+    public showHideAnupana = false;
+
     constructor(public patientService: PatientService,public visitService:VisitService,
         public medicationBLService: MedicationBLService,
         public changeDetector: ChangeDetectorRef,
@@ -42,6 +44,7 @@ export class HomeMedicationAddComponent {
         this.LoadAllMedications();
         this.enableMedicationValidation = this.EnableMedicationValidation();
         this.GetMedicationFrequency();
+        this.ShowHideAnupana();
     }
     public options =  {
         headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })};
@@ -203,6 +206,13 @@ export class HomeMedicationAddComponent {
           } else {
             return false;
           } 
+    }
+
+    ShowHideAnupana(){
+        const parameter = this.coreService.Parameters.find(a => a.ParameterGroupName === "Clinical" && a.ParameterName === "ShowHideAnupana");
+        const showHide = parameter ? parameter.ParameterValue : "false";
+        this.showHideAnupana = showHide === "true" ? true : false;
+
     }
 
     MedicationFieldsMandatory() {

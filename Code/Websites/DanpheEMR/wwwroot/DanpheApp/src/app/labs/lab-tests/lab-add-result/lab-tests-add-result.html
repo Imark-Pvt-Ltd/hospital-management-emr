@@ -637,7 +637,7 @@
   <div class="popup-static portlet box portlet-fullscreen" *ngIf="showWarningConfirmBox">
     <div class="portlet-body form">
       <div class="col-md-offset-4 col-md-4">
-        <div class="modelbox-div">
+        <div class="modelbox-div"> 
           <div class="modelbox-header">
             <h4 class="margin-0-vr text-warning text-center">
               <strong>Alert</strong>
@@ -681,7 +681,7 @@
             <div class="row">
               <div class="col-md-5">Sample Collection Date <b>:</b></div>
               <div class="col-md-7">
-                <danphe-date-picker [(ngModel)]="sampleCode.SampleCreatedOn" ngDefaultControl [CalendarTypes]="'np'"
+                <danphe-date-picker [(ngModel)]="sampleCode.SampleCreatedOn" ngDefaultControl [CalendarTypes]="'en'"
                   (ngModelChange)="SampleDateChanged()"></danphe-date-picker>
               </div>
             </div>

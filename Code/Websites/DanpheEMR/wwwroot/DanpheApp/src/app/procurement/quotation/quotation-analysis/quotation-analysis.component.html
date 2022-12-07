@@ -127,7 +127,7 @@
           </div>
           <div class="modal-body">
               <p *ngIf="selectedVendor.VendorId==null" style="text-align: center; color: red;">!!!Please Select Vendor for Quotation Analysis!!!</p>
-              <p *ngIf="selectedVendor.VendorId!=null" style="text-align: center;">!!!<i>Are you sure you want to select Vendor:</i><b>{{selectedVendor.VendorName}}?</b><br /> on Issued Date: &nbsp;{{issuedDate}}<span *ngIf="issuedDate"> &nbsp;({{issuedDate | nepaliDate}})</span></p>
+              <p *ngIf="selectedVendor.VendorId!=null" style="text-align: center;">!!!<i>Are you sure you want to select Vendor:</i><b>{{selectedVendor.VendorName}}?</b><br /> on Issued Date: &nbsp;{{issuedDate}}</p>
           </div>
           <div *ngIf="selectedVendor.VendorId!=null" class="modal-footer">
               <button type="button" (click)="SaveSelectedVendor()" class="btn btn-danger" data-dismiss="modal">Yes</button>

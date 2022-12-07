@@ -27,7 +27,7 @@
 </style>
 <div class="row">
   <div class="col-lg-12 col-sm-12">
-    <danphe-grid [grid-colDefaults]="returnToSupplierListGridColumns" [rangeType]="dateRange" (onDateChange)="onGridDateChange($event)" [date-range-options]="'1W,1M,3M'" [grid-data]="returnItemToSupplierList" [NepaliDateInGridParams]="NepaliDateInGridSettings" [show-CustomDate]="true" (grid-actions)="ReturnToSupplierGridAction($event)"> </danphe-grid>
+    <danphe-grid [grid-colDefaults]="returnToSupplierListGridColumns" [rangeType]="dateRange" (onDateChange)="onGridDateChange($event)" [date-range-options]="'1W,1M,3M'" [grid-data]="returnItemToSupplierList"  [show-CustomDate]="true" (grid-actions)="ReturnToSupplierGridAction($event)"> </danphe-grid>
   </div>
 </div>
 <div class="popup-static portlet box portlet-fullscreen custom_modal" *ngIf="showRetSuppItemsbyRetSuppID">
@@ -48,7 +48,7 @@
                   <div class="text-center bill-head" style="text-align: center;font-family:sans-serif; margin-top: 10px;">
                     <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                     <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                    <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{ headerDetail.tel}}</span><br />
+                    <span style="font-size:13px;">Tel: {{ headerDetail.tel}}</span><br />
                     <span style="font-size:15px;">DDA:{{headerDetail.DDA}}</span><br />
                     <span style="font-size:14px; margin-right: 30px;"><strong>PHARMACY UNIT</strong></span>
                   </div>

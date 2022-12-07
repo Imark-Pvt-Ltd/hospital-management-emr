@@ -1,4 +1,6 @@
-﻿export class StockModel {
+﻿import * as moment from "moment";
+
+export class StockModel {
 
     public StockId: number = 0;
     public GoodsReceiptItemId: number = 0;
@@ -8,7 +10,7 @@
     public ReceivedQuantity: number = 0;
     public AvailableQuantity: number = 0;
     public AvailQuantity:number= 0;
-    public ReceiptDate: Date = null;
+    public ReceiptDate: Date= new Date(moment().format('YYYY-MM-DD'));
     public CreatedBy: number = 0;
     public CreatedOn: Date = null;
     public MRP: number;

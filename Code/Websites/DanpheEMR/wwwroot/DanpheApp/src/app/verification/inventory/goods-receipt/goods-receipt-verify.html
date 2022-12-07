@@ -104,7 +104,7 @@
               <div class="text-center bill-head" style="text-align: center;font-family:sans-serif; margin-top: 10px;">
                 <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                 <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{ headerDetail.tel}}</span><br />
+                <span style="font-size:13px;"> Tel: {{ headerDetail.tel}}</span><br />
                 <span style="font-size:15px;"><strong> Inventory Unit </strong></span><br />
               </div>
             </div>
@@ -122,16 +122,13 @@
             <div *ngIf="!!GoodsReceipt.VendorName">Selected Vendor:<b> {{GoodsReceipt.VendorName}}</b></div>
           </div>
           <div class="right" style="text-align:right;">
-            <div>Entry Date:<b> {{GoodsReceipt.CreatedOn | date : 'yyyy-MM-dd'}}</b>&nbsp;&nbsp;
-              <i>({{GoodsReceipt.CreatedOn | nepaliDate }} BS)</i>
+            <div>Entry Date:<b> {{GoodsReceipt.CreatedOn | date : 'yyyy-MM-dd'}}</b>
             </div>
             <div>
-              GR Date:<b> {{GoodsReceipt.GoodsReceiptDate | date : 'yyyy-MM-dd'}}</b>&nbsp;&nbsp;
-              <i *ngIf="GoodsReceipt.GoodsReceiptDate">({{GoodsReceipt.GoodsReceiptDate | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+              GR Date:<b> {{GoodsReceipt.GoodsReceiptDate | date : 'yyyy-MM-dd'}}</b>
             </div>
             <div>
-              Bill Date:<b> {{GoodsReceipt.VendorBillDate | date : 'yyyy-MM-dd'}}</b>&nbsp;&nbsp;
-              <i *ngIf="GoodsReceipt.VendorBillDate">({{GoodsReceipt.VendorBillDate | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+              Bill Date:<b> {{GoodsReceipt.VendorBillDate | date : 'yyyy-MM-dd'}}</b>
             </div>
             <div>Bill No:<b> {{GoodsReceipt.BillNo}}</b></div>
           </div>
@@ -330,7 +327,7 @@
               <td width="50%" style="text-align: center;">
                 <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                 <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{ headerDetail.tel}}</span><br />
+                <span style="font-size:13px;"> Tel: {{ headerDetail.tel}}</span><br />
               </td>
               <td width="20%"><table>
                   <tr>

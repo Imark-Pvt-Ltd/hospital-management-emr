@@ -123,7 +123,8 @@ import { MessageboxService } from "../../shared/messagebox/messagebox.service";
         this.PatientStickerDetails.MunicipalityName = ((res.Results[0].MunicipalityName != null) || (res.Results[0].MunicipalityName != "")) ? res.Results[0].MunicipalityName  : "";
         this.PatientStickerDetails.District = ((res.Results[0].District != null || res.Results[0].District != "")) ? res.Results[0].District  : "";
         this.PatientStickerDetails.Gender = res.Results[0].Gender;
-        this.localDateTime = this.GetLocalDate() + " BS";
+        this.localDateTime = moment(new Date()).format('YYYY-MM-DD');
+        //this.localDateTime = this.GetLocalDate() + " BS";
         this.ageSex = CommonFunctions.GetFormattedAgeSexforSticker(this.PatientStickerDetails.DateOfBirth, this.PatientStickerDetails.Gender, this.PatientStickerDetails.Age);
         this.patientQRCodeInfo = `Name: ` + this.PatientStickerDetails.PatientName + `
   Hospital No: `+ this.PatientStickerDetails.HospitalNo + `

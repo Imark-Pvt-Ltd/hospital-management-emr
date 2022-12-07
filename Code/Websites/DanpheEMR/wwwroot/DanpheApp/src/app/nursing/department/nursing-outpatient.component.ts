@@ -85,8 +85,8 @@ export class NursingOutPatientComponent {
         headerName: "Date",
         field: "VisitDate",
         width: 80,
-        sort: "desc"
-        //cellRenderer: GridColumnSettings.VisitDateOnlyRenderer,
+        sort: "desc",
+        cellRenderer: GridColumnSettings.VisitDateOnlyRenderer,
       },
       {
         headerName: "Time",

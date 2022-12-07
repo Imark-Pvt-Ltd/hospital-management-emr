@@ -19,7 +19,7 @@
   <!-- <div class="row"></div> -->
   <div class="row">
     <div class="col-lg-12 col-sm-12">
-      <danphe-grid [grid-colDefaults]="LabGridColumns" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+      <danphe-grid [grid-colDefaults]="LabGridColumns" 
         [grid-data]="requisitions" [rangeType]="dateRange" (onDateChange)="onDateChange($event)"
         [show-CustomDate]="true" [date-settings-name]="'common-range-with-today'"
         (grid-actions)="LabGridActions($event)">

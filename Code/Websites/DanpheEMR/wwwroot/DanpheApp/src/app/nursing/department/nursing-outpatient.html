@@ -138,12 +138,12 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="pending">
             <danphe-grid [grid-colDefaults]="nurOPDGridColumnSettings" [grid-data]="opdListZero"
-              (grid-actions)="NurOPDListGridActions($event)" [NepaliDateInGridParams]="NepaliDateInGridSettings">
+              (grid-actions)="NurOPDListGridActions($event)" >
             </danphe-grid>
           </div>
           <div role="tabpanel" class="tab-pane" id="taken">
             <danphe-grid [grid-colDefaults]="nurOPDGridColumnSettings" [grid-data]="opdListOne"
-              (grid-actions)="NurOPDListGridActions($event)" [NepaliDateInGridParams]="NepaliDateInGridSettings">
+              (grid-actions)="NurOPDListGridActions($event)" >
             </danphe-grid>
           </div>
         </div>
@@ -176,17 +176,17 @@
 
         <div>
           <danphe-grid *ngIf="showAllData" [grid-colDefaults]="nurOPDGridColumnSettings" [grid-data]="opdListPastDays"
-            (grid-actions)="NurOPDListGridActions($event)" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+            (grid-actions)="NurOPDListGridActions($event)" 
             [rangeType]="dateRange" (onDateChange)="onGridDateChange($event)" [date-range-options]="'1W,1M,3M'"
             [show-CustomDate]="true"> </danphe-grid>
           <danphe-grid *ngIf="showTriagedData" [grid-colDefaults]="nurOPDGridColumnSettings"
             [grid-data]="opdListOnePastDays" (grid-actions)="NurOPDListGridActions($event)"
-            [NepaliDateInGridParams]="NepaliDateInGridSettings" [rangeType]="dateRange"
+             [rangeType]="dateRange"
             (onDateChange)="onGridDateChange($event)" [date-range-options]="'1W,1M,3M'" [show-CustomDate]="true">
           </danphe-grid>
           <danphe-grid *ngIf="showNotTriagedData" [grid-colDefaults]="nurOPDGridColumnSettings"
             [grid-data]="opdListZeroPastDays" (grid-actions)="NurOPDListGridActions($event)"
-            [NepaliDateInGridParams]="NepaliDateInGridSettings" [rangeType]="dateRange"
+             [rangeType]="dateRange"
             (onDateChange)="onGridDateChange($event)" [date-range-options]="'1W,1M,3M'" [show-CustomDate]="true">
           </danphe-grid>
         </div>

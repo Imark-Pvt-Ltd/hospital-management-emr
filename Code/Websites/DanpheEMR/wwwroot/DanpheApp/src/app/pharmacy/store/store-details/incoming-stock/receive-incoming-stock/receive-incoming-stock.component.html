@@ -37,7 +37,7 @@
                               <strong>Received On:</strong>
                               <div *ngIf="!!incomingStockDetail.ReceivedOn; else elseBlockTwo">
                                 {{incomingStockDetail.ReceivedOn | date : "yyyy-MM-dd"}}
-                                <i *ngIf="incomingStockDetail.ReceivedOn">({{incomingStockDetail.ReceivedOn | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+                                <!-- <i *ngIf="incomingStockDetail.ReceivedOn">({{incomingStockDetail.ReceivedOn | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i> -->
                               </div>
                               <ng-template #elseBlockTwo>Not Received</ng-template>
                             </span>

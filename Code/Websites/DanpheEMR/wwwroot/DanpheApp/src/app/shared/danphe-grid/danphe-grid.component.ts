@@ -513,7 +513,7 @@ export class DanpheGridComponent implements OnInit, AfterViewInit {
 
       if (!this.printBy.includes("Printed")) {
         var currDate = moment().format("YYYY-MM-DD HH:mm");
-        var nepCurrDate = NepaliCalendarService.ConvertEngToNepaliFormatted_static(currDate, "YYYY-MM-DD hh:mm");
+        //var nepCurrDate = NepaliCalendarService.ConvertEngToNepaliFormatted_static(currDate, "YYYY-MM-DD hh:mm");
         let printedBy = (this.paramData.ShowPrintBy) ? "<b>Printed By:</b>&nbsp;" + this.printBy : '';
         this.printBy = printedBy;
       }

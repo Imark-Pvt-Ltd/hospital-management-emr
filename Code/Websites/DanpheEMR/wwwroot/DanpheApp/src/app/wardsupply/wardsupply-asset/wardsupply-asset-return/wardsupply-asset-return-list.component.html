@@ -14,7 +14,7 @@
 <div class="row" *ngIf="showReturnList">
   <div class="col-lg-12 col-sm-12">
     <danphe-grid [grid-colDefaults]="SubstoreAssetReturnGridColumns" [grid-data]="ReturnGridDataFiltered"
-      [show-CustomDate]="true" [rangeType]="dateRange" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+      [show-CustomDate]="true" [rangeType]="dateRange" 
       (grid-actions)="ReturnGridAction($event)" (onDateChange)="onDateChange($event)"> </danphe-grid>
   </div>
 </div>

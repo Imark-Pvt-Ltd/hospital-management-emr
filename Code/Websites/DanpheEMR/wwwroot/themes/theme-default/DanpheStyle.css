@@ -925,6 +925,11 @@ h3.cstm-add-heading {
     content: "";
     width: 100%;
 }
+/* To ShowHide Anupana filed in medication section css way...  we have make this parametric*/
+/* .cstm-form-group-Anupana{
+    display: none;
+    visibility: hidden;
+} */   
 .cstm-control-label {
     margin-bottom: 0px;
 }

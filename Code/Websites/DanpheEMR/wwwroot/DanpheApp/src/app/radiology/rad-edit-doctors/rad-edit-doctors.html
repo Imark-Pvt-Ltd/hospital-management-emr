@@ -25,7 +25,7 @@
 
       <danphe-grid [grid-colDefaults]="editDoctorGridColumns" [grid-data]="allImagingFilteredItems" (grid-actions)="EditDoctorGridActions($event)"
                    [show-ServerSideSearch]="false" [show-CustomDate]="true" [rangeType]="dateRange" [date-range-options]="'1W,1M,3M'"
-                   [show-print-button]="true" (onDateChange)="SearchItemByDate($event)" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+                   [show-print-button]="true" (onDateChange)="SearchItemByDate($event)" 
                    [grid-showExport]="true"
                    [grid-exportOptions]="GetGridExportOptions()">
                     

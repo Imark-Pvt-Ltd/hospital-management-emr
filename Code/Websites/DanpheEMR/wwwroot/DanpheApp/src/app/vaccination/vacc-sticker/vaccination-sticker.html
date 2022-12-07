@@ -28,8 +28,7 @@
                 <span>{{stickerDetail.DepartmentName}}</span>
               </div>
               <span> Date: {{stickerDetail.VisitDateTime |
-                DanpheDateTime:'format':'YYYY-MM-DD'}}&nbsp;&nbsp;({{stickerDetail.VisitDateTime |
-                nepaliDate:'format':'YYYY-MM-DD'}} BS) </span>
+                DanpheDateTime:'format':'YYYY-MM-DD'}}&nbsp;&nbsp; </span>
 
               <div style="display: flex; justify-content:space-between;">
                 <span style="display:inline-block;">
@@ -50,7 +49,7 @@
               <div>
                 <div style="display:inline-block;font-weight:bold;text-transform:uppercase">
                   <div style="display:inline-block;" *ngIf="stickerDetail.DateOfBirth"> Baby's DOB&nbsp;:&nbsp;
-                    {{stickerDetail.DateOfBirth | nepaliDate:'format':'YYYY-MM-DD'}} </div>
+                    {{stickerDetail.DateOfBirth }} </div>
                 </div>
               </div>
               <div style="display:flex; justify-content: space-between;">

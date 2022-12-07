@@ -44,7 +44,7 @@ namespace DanpheEMR.Controllers
                 if (reqType == "deposit-list")
                 {
                     var depositList = (from deposit in dbContext.BillingDeposits
-                                       join patient in dbContext.Patient on deposit.PatientId equals patient.PatientId
+                                       join patient in dbContext.Patient.Include(a => a.Admissions) on deposit.PatientId equals patient.PatientId
                                        join fiscalYear in dbContext.BillingFiscalYears on deposit.FiscalYearId equals fiscalYear.FiscalYearId
                                        join employee in dbContext.Employee on deposit.CreatedBy equals employee.EmployeeId
                                        where deposit.IsActive == true
@@ -72,7 +72,8 @@ namespace DanpheEMR.Controllers
                                            BillingUser = employee.FirstName + " " + (string.IsNullOrEmpty(employee.MiddleName) ? "" : employee.MiddleName + " ") + employee.LastName,
                                            Address = patient.Address,
                                            deposit.CareOf,
-                                           IsDuplicatePrint = true
+                                           IsDuplicatePrint = true,
+                                           AdmissionDate = patient.Admissions.OrderByDescending(a => a.AdmissionDate).Select(a => a.AdmissionDate).FirstOrDefault()
                                        }).OrderByDescending(d => d.CreatedOn).ToList();
                     responseData.Status = "OK";
                     responseData.Results = depositList;

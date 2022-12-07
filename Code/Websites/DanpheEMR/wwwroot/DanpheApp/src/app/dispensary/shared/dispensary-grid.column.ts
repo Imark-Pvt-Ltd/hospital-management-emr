@@ -327,7 +327,7 @@ export default class DispensaryGridColumns {
   ];
   static RequisitionDateOnlyRenderer(params) {
     let date: string = params.data.RequisitionDate;
-    return moment(date).format('yyyy-mm-hh');
+    return moment(date).format('YYYY-MM-DD');
   }
   static ShowActionForRequisitionList(params) {
     let template =
@@ -367,7 +367,7 @@ export default class DispensaryGridColumns {
   ];
   static DispatchDateRender(params) {
     let date: string = params.data.CreatedOn;
-    return moment(date).format('yyyy-mm-hh');
+    return moment(date).format('YYYY-MM-DD');
   }
   //pharmacy - sale invoice list details grid column setting
   static PHRMSaleList = [

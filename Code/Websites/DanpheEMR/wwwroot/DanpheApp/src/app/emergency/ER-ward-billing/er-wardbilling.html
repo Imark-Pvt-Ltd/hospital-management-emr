@@ -62,7 +62,7 @@
 
                 <div *ngIf="provisionalItemsDetails && provisionalItemsDetails.length > 0" class="table-responsive">
                   <danphe-grid [grid-colDefaults]="ERPatientWardBillGridCol" [grid-data]="provisionalItemsDetails"
-                               [NepaliDateInGridParams]="NepaliDateInGridSettings" (grid-actions)="ERWardItemListAction($event)">
+                                (grid-actions)="ERWardItemListAction($event)">
                   </danphe-grid>
                 </div>
 

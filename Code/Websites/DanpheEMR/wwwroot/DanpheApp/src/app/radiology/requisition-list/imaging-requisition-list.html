@@ -18,7 +18,7 @@
                           (add-report)="AddReport($event)"></danphe-post-report>
       <danphe-grid *ngIf="!loadingGridData" [grid-colDefaults]="imgReqListGridColumns" [grid-data]="imagingReportsFiltered" [rangeType]="dateRange"
                    (onDateChange)="onGridDateChange($event)" [date-range-options]="'1D,1W,1M,3M'"
-                   [show-CustomDate]="true" (grid-actions)="ImagingRequisitionListGridActions($event)" [show-print-button]="false" [NepaliDateInGridParams]="NepaliDateInGridSettings"> </danphe-grid>
+                   [show-CustomDate]="true" (grid-actions)="ImagingRequisitionListGridActions($event)" [show-print-button]="false" > </danphe-grid>
       <danphe-view-imaging-report [print-without-preview]="true" *ngIf="showImagingReport"
                                   [requisitionId]="requisitionId" (on-report-edit)="GetBackOnClose($event)"></danphe-view-imaging-report>
     </div>

@@ -86,7 +86,7 @@
 </div>
 <div class="row" *ngIf="!IsSummaryViewMode">
   <div class="col-lg-12 col-sm-12">
-    <danphe-grid [grid-colDefaults]="PHRMUserReportColumn" [grid-data]="PHRMUserReportData" [NepaliDateInGridParams]="NepaliDateInGridSettings" [grid-exportOptions]="gridExportOptions" [grid-showExport]="true" (grid-onExport)="OnGridExport($event)" [grid-footer-content]="footerContent" [grid-date-range]="dateRange" [report-for]="'pharmacy'"> </danphe-grid>
+    <danphe-grid [grid-colDefaults]="PHRMUserReportColumn" [grid-data]="PHRMUserReportData"  [grid-exportOptions]="gridExportOptions" [grid-showExport]="true" (grid-onExport)="OnGridExport($event)" [grid-footer-content]="footerContent" [grid-date-range]="dateRange" [report-for]="'pharmacy'"> </danphe-grid>
   </div>
 </div>
 <hr style="font-weight: 1px;">

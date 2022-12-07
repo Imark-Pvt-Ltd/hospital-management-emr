@@ -19,7 +19,7 @@ export class StockDetailsComponent {
   public stockdetailGridColumns: Array<any> = null;
   public itemId: number = null;
   public itemName: string = null;
-  public NepaliDateInGridSettings: NepaliDateInGridParams = new NepaliDateInGridParams();
+  // public NepaliDateInGridSettings: NepaliDateInGridParams = new NepaliDateInGridParams();
   StoreId: number;
 
   constructor(
@@ -28,7 +28,7 @@ export class StockDetailsComponent {
     public router: Router, public _activateInventoryService: ActivateInventoryService,
     public msgBoxServ: MessageboxService) {
     this.stockdetailGridColumns = GridColumnSettings.StockDetails;
-    this.NepaliDateInGridSettings.NepaliDateColumnList.push(...[new NepaliDateInGridColumnDetail('GoodsReceiptDate', false)]);
+    // this.NepaliDateInGridSettings.NepaliDateColumnList.push(...[new NepaliDateInGridColumnDetail('GoodsReceiptDate', false)]);
     this.loadStockDetails(this.inventoryservice.ItemId);
   }
   //load stock item detail using item id, batch no and expiryDate;

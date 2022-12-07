@@ -34,7 +34,7 @@
               <span style="font-size:14px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
               <span style="font-size:13px;">{{headerDetail.address}}</span><br />
               <span style="font-size:13px;">Telephone: {{ headerDetail.tel}}</span><br />
-              <span style="font-size:13px;">PAN no: {{headerDetail.PANno}}</span><br />
+              <!-- <span style="font-size:13px;">PAN no: {{headerDetail.PANno}}</span><br /> -->
               <span style="font-size:11px;"><strong>DDA:{{headerDetail.DDA}}</strong></span><br />
               <span style="font-size:13px; margin-bottom: 15px;"><strong>PHARMACY UNIT</strong></span>
             </div>
@@ -85,7 +85,7 @@
               </div>
             </div>
             <div class="right" style="width:31%">
-              <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate | nepaliDate }})</p>
+              <!-- <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate }})</p> -->
             </div>
           </div>
           <div class="col-md-12" style="padding:0px;padding-top: 0px;">
@@ -96,9 +96,9 @@
                 {{receipt.ProviderName}}
               </div>
             </div>
-            <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
+            <!-- <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
               <p class="no-margin" style="text-align:right;"> NMCNumber: {{receipt.ProviderNMCNumber}}</p>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-12" style="padding:0px;" *ngIf="receipt.Patient.PatientId > 0">
             <div class="left" style="width: 69%;">
@@ -238,7 +238,7 @@
             <div class="text-center bill-head" style="text-align: center;font-family:sans-serif; margin-top: 10px;">
               <span style="font-size:14px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
               <span style="font-size:12px;">{{headerDetail.address}}</span><br />
-              <span style="font-size:12px;">PAN no: {{headerDetail.PANno}}</span><br /> <span>Tel: {{
+               <span>Tel: {{
                 headerDetail.tel}}</span><br />
               <span style="font-size:12px;"><strong>DDA: {{headerDetail.DDA}}</strong></span><br />
               <span style="font-size:13px;"><strong>PHARMACY UNIT</strong></span>
@@ -294,7 +294,7 @@
               </div>
             </div>
             <div class="right" style="width:31%">
-              <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate | nepaliDate }})</p>
+              <!-- <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate}})</p> -->
             </div>
           </div>
           <div class="col-md-12" style="padding:0px;padding-top: 0px;">
@@ -305,9 +305,9 @@
                 {{receipt.ProviderName}}
               </div>
             </div>
-            <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
+            <!-- <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
               <p class="no-margin" style="text-align:right;"> NMCNumber: {{receipt.ProviderNMCNumber}}</p>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-12" style="padding:0px;" *ngIf="receipt.Patient.PatientId > 0">
             <div class="left" style="width: 69%;">
@@ -491,7 +491,7 @@
             <div class="text-center bill-head" style="text-align: center;margin-top: 10px;">
               <span style="font-size:14px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
               <span style="font-size:13px;">{{headerDetail.address}}</span><br />
-              <span style="font-size:13px;">PAN no: {{headerDetail.PANno}}</span><br />
+              
               <span>Tel: {{ headerDetail.tel}}</span><br />
               <span style="font-size:11px;"><strong>DDA: {{headerDetail.DDA}}</strong></span><br />
               <span style="font-size:13px;"><strong>PHARMACY UNITS</strong></span>
@@ -548,7 +548,7 @@
               </div>
             </div>
             <div class="right" style="width:31%">
-              <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate | nepaliDate }})</p>
+              <!-- <p class="no-margin" style="text-align:right;"> ({{receipt.ReceiptDate}})</p> -->
             </div>
           </div>
           <div class="col-md-12" style="padding:0px;padding-top: 0px;">
@@ -559,9 +559,9 @@
                 {{receipt.ProviderName}}
               </div>
             </div>
-            <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
+            <!-- <div class="right" style="width:31%" *ngIf="receipt.ProviderNMCNumber">
               <p class="no-margin" style="text-align:right;"> NMCNumber: {{receipt.ProviderNMCNumber}}</p>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-12" style="padding:0px;" *ngIf="receipt.Patient.PatientId > 0">
             <div class="left" style="width: 69%;">

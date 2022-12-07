@@ -57,8 +57,7 @@
                 <div>
                     <div class="col-md-6">
                         <p>
-                            <b> User collection on </b>{{counterDayDate}}<i *ngIf="counterDayDate">({{counterDayDate |
-                                nepaliDate:'format':'YYYY-MM-DD' }}BS)</i>
+                            <b> User collection on </b>{{counterDayDate}}<i *ngIf="counterDayDate"></i>
                         </p>
                         <!-- sud:4Sept'21--Hiding Unnecessary records from User/Counter Collection Section 
                         Overall sales data must be shifted to separate section in left (check from billing module) -->
@@ -99,8 +98,7 @@
                     </div>
                     <div class="col-md-6">
                         <p>
-                            <b> Counter collection on </b>{{counterDayDate}}<i *ngIf="counterDayDate">({{counterDayDate
-                                | nepaliDate:'format':'YYYY-MM-DD' }}BS)</i>
+                            <b> Counter collection on </b>{{counterDayDate}}<i *ngIf="counterDayDate"></i>
                         </p>
                         <div *ngFor="let cntr of counterDayCollection" style="padding-top:15px; padding-bottom:10px">
                             <h4 class="label label-success">{{cntr.CounterName}}</h4> <b>: {{cntr.CounterSale}}</b>

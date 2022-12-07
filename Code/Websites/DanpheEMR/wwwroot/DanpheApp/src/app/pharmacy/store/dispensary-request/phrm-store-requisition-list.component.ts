@@ -70,7 +70,7 @@ export class PHRMStoreRequisitionListComponent implements OnInit {
             this.dateRange = 'last1Week';
             this.GetPharmacyBillingHeaderParameter()
 
-            this.NepaliDateInRequisitionGridSettings.NepaliDateColumnList.push(new NepaliDateInGridColumnDetail('RequisitionDate', false));
+            //this.NepaliDateInRequisitionGridSettings.NepaliDateColumnList.push(new NepaliDateInGridColumnDetail('RequisitionDate', false));
             this.requisitionGridColumns = GridColumnSettings.PHRMStoreRequisitionList;
 
             this.CheckReceiptSettings();

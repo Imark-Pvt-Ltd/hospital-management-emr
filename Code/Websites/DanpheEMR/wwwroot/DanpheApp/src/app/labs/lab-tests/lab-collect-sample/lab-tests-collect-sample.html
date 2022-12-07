@@ -19,12 +19,12 @@
           </thead>
           <thead class="sample-main-head">
             <tr>
-              <th>Requested On <b *ngIf="!IsLocalDate">(AD)</b><b *ngIf="IsLocalDate">(BS)</b>
+              <th>Requested On <b *ngIf="!IsLocalDate">(AD)</b><b *ngIf="IsLocalDate">(AD)</b>
                 <div class="tooltip ng-star-inserted" style="color: #0069FF;z-index: inherit;">
                   <span style="display: inline-block;background: #D8DEF1;cursor: pointer;">
-                    <i class="fa fa-refresh" (click)="ChangeDateFormat()"></i>
+                    <!-- <i class="fa fa-refresh" (click)="ChangeDateFormat()"></i> -->
                   </span>
-                  <p class="tooltiptext ttptextdown no-print">Change date format to AD/BS</p>
+                  <!-- <p class="tooltiptext ttptextdown no-print">Change date format to AD/BS</p> -->
                 </div>
               </th>
               <th>Requested by</th>
@@ -51,7 +51,7 @@
           <tbody>
             <tr class="align-vertical-middle" *ngFor="let requ of patientTestCSVs;let i = index">
               <td *ngIf="!IsLocalDate">{{requ.OrderDateTime | DanpheDateTime:'format':'YYYY-MM-DD hh:mm A'}}</td>
-              <td *ngIf="IsLocalDate">{{requ.OrderDateTime | nepaliDate:'format':'YYYY-MM-DD hh:mm A'}}</td>
+              <td *ngIf="IsLocalDate">{{requ.OrderDateTime | DanpheDateTime:'format':'YYYY-MM-DD hh:mm A'}}</td>
               <td>{{requ.ProviderName}}</td>
               <!--below td is for insurance flag-->
               <td *ngIf="showInsuranceFlag"><span class="bold green" title="Government Insurance"> {{ requ &&

@@ -20,9 +20,7 @@
         <label class="control-label">Dispatch&nbsp;Date&nbsp;<span>:</span>
           <span>&nbsp;
             {{dispatch.DispatchedDate |date : 'yyyy-MM-dd'}}
-            &nbsp;&nbsp;
-            <i *ngIf="dispatch.RequestedOn ">
-              ({{dispatch.DispatchedDate | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+            &nbsp;
           </span>
         </label>
       </div>

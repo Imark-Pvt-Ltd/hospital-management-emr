@@ -4,7 +4,7 @@
       <danphe-grid [grid-colDefaults]="settlmntGridCols"
                  [grid-data]="settlMntList"
                  (grid-actions)="DuplicateReceiptGridActions($event)"
-                 [NepaliDateInGridParams]="NepaliDateInGridSettings"> </danphe-grid>
+                 > </danphe-grid>
     </div>
   </div>
   <div *ngIf="showReceipt"> <a class="btn blue" (click)="ShowGridView()"> <i class="fa fa-backward"></i> Back </a>

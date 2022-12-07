@@ -20,7 +20,7 @@
               <span class="icheck-inline">
                 <label style="margin: 0px !important;" class="mt-checkbox mt-checkbox-outline" title="Click to change Date Format">
                   <input name="showNepaliDate" type="checkbox" [(ngModel)]="showNepaliDate" id="showNepaliDate">
-                  <span></span><label for="showNepaliDate">Date (B.S.) ?</label>
+                  <!-- <span></span><label for="showNepaliDate">Date (B.S.) ?</label> -->
                 </label>
               </span>
             </td>
@@ -46,7 +46,7 @@
             <td>{{row.GoodsReceiptNo}}</td>
             <td>
               <ng-container *ngIf="row.GoodsReceiptDate">
-                <span *ngIf="showNepaliDate; else englishDate">{{row.GoodsReceiptDate| nepaliDate:'format':'YYYY-MM-DD'}} BS</span>
+                <span *ngIf="showNepaliDate; else englishDate">{{row.GoodsReceiptDate| date : 'yyyy-MM-dd'}} </span>
                 <ng-template #englishDate>{{row.GoodsReceiptDate | date : 'yyyy-MM-dd'}} AD</ng-template>
               </ng-container>
             </td>

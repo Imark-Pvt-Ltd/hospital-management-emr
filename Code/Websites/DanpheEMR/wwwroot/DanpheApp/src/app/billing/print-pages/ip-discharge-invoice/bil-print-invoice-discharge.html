@@ -108,7 +108,7 @@
                                             <span
                                                 class="text-uppercase text-bold txt-val">{{invoice.VisitInfo.AdmissionDate
                                                 | DanpheDateTime:'format':'YYYY-MM-DD'}}
-                                                ({{invoice.VisitInfo.AdmissionDate | nepaliDate}})</span>
+                                                </span>
                                         </div>
 
                                         <div class="col-right">
@@ -126,13 +126,13 @@
                                                 class="text-uppercase text-bold txt-val">{{invoice.VisitInfo.DischargeDate
                                                 |
                                                 DanpheDateTime:'format':'YYYY-MM-DD'}}
-                                                ({{invoice.VisitInfo.DischargeDate | nepaliDate}})</span>
+                                                </span>
                                         </div>
-                                        <div class="col-right">
+                                        <!-- <div class="col-right">
                                             <span class="text-uppercase text-bold txt-val">
                                                 ({{invoice.InvoiceInfo.TransactionDate | nepaliDate}})
                                             </span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="discharge-bill-sm-row flx justify-sp-between" *ngIf="isInsurance">
                                         <div class="col-left flex-2">

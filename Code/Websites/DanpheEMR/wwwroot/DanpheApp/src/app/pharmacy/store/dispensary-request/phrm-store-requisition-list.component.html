@@ -47,7 +47,7 @@
             <a style="float:right;  margin-top:-13px;" class="btn btn-danger" (click)="Close()" title="Cancel">X</a>
             <hr />
           </div>
-          <danphe-grid [grid-colDefaults]="DispatchListGridColumns" [grid-data]="dispatchList" (grid-actions)="DispatchDetailsGridAction($event)" [NepaliDateInGridParams]="NepaliDateInDispatchListGridSettings" [grid-exportOptions]="gridExportOptions" [grid-showExport]="true">
+          <danphe-grid [grid-colDefaults]="DispatchListGridColumns" [grid-data]="dispatchList" (grid-actions)="DispatchDetailsGridAction($event)"  [grid-exportOptions]="gridExportOptions" [grid-showExport]="true">
           </danphe-grid>
           <hr />
         </div>
@@ -79,7 +79,9 @@
                     <div class="text-center bill-head" style="text-align: center;font-family:sans-serif; margin-top: 10px;">
                       <span style="font-size:15px;"><strong>{{headerDetail.hospitalName}}</strong></span><br />
                       <span style="font-size:15px;">{{headerDetail.address}}</span><br />
-                      <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{
+                      <!-- <span style="font-size:13px;">PAN no: {{headerDetail.PANno}} , Tel: {{
+                        headerDetail.tel}}</span><br /> -->
+                          <span style="font-size:13px;"> Tel: {{
                         headerDetail.tel}}</span><br />
                       <span style="font-size:15px;"><strong> Pharmacy Unit </strong></span><br />
                     </div>
@@ -99,11 +101,10 @@
                 </div>
                 <div class="right" style="text-align:right;">
                   <p>Dispatch Date:<b> {{innerDispatchdetails.CreatedOn | date}}</b>&nbsp;
-                    <i *ngIf="innerDispatchdetails.CreatedOn">({{innerDispatchdetails.CreatedOn |
-                      nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+                    <i *ngIf="innerDispatchdetails.CreatedOn"></i>
                   </p>
                   <p>Requisition Date:<b> {{requisitionDate | date}}</b>&nbsp;
-                    <i *ngIf="requisitionDate">({{requisitionDate | nepaliDate:'format':'YYYY-MM-DD'}} BS )</i>
+                    <i *ngIf="requisitionDate"></i>
                   </p>
                 </div>
                 <div class="clear"></div>

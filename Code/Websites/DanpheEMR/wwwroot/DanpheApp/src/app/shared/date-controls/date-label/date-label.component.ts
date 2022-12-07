@@ -46,15 +46,17 @@ export class DateLabelComponent {
             this.npDate = this.nepaliCalendarServ.ConvertEngToNepDateString(this.ipDateValue);
             this.engDate = moment(this.ipDateValue).format("YYYY-MM-DD");
             this.timeValue = moment(this.ipDateValue).format("hh:mm A");
+            this.displayDate = this.showTime ? this.engDate + " " + this.timeValue : this.engDate;
+            //As per Change Request of Francis, Kenya
+            // if (this.showEngDate) {
+            //     this.displayDate = this.showTime ? this.engDate + " " + this.timeValue : this.engDate;
+            // }
+            // else {
+            //     this.displayDate = this.showTime ? this.npDate + " " + this.timeValue : this.npDate;
+            // }
 
-            if (this.showEngDate) {
-                this.displayDate = this.showTime ? this.engDate + " " + this.timeValue : this.engDate;
-            }
-            else {
-                this.displayDate = this.showTime ? this.npDate + " " + this.timeValue : this.npDate;
-            }
-
-            this.tooltipDate = "(AD) " + this.engDate + "\n(BS) " + this.npDate;
+            this.tooltipDate = "(AD) " + this.engDate;
+            //+ "\n(BS) " + this.npDate;
 
 
         }

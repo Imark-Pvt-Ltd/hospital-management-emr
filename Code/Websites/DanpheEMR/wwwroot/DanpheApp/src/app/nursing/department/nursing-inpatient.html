@@ -81,7 +81,7 @@
 <div class="row">
   <div class="col-md-12">
     <danphe-grid *ngIf="showInPatGrid && showFavPatGrid" [grid-colDefaults]="nurFavPatGidColumnSettings"
-      [grid-data]="FavoritePatients" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+      [grid-data]="FavoritePatients" 
       (grid-actions)="NurIPDListGridActions($event)">
     </danphe-grid>
   </div>
@@ -91,7 +91,7 @@
 <div class="row">
   <div class="col-md-12">
     <danphe-grid *ngIf="showInPatGrid && showAllPatGrid" [grid-colDefaults]="nurIPDGridColumnSettings"
-      [grid-data]="ipdList" [NepaliDateInGridParams]="NepaliDateInGridSettings"
+      [grid-data]="ipdList" 
       (grid-actions)="NurIPDListGridActions($event)">
     </danphe-grid>
   </div>

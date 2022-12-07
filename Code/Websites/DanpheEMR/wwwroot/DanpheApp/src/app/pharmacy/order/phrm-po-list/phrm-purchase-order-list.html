@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <danphe-grid [grid-colDefaults]="PHRMpurchaseOrdersGridColumns" [grid-data]="PHRMPurchaseOrderList" [rangeType]="dateRange" [show-CustomDate]="true" [NepaliDateInGridParams]="NepaliDateInGridSettings" (onDateChange)="onDateChange($event)" (grid-actions)="PHRMPurchaseOrderGridAction($event)"> </danphe-grid>
+    <danphe-grid [grid-colDefaults]="PHRMpurchaseOrdersGridColumns" [grid-data]="PHRMPurchaseOrderList" [rangeType]="dateRange" [show-CustomDate]="true"  (onDateChange)="onDateChange($event)" (grid-actions)="PHRMPurchaseOrderGridAction($event)"> </danphe-grid>
   </div>
 </div>
 <div class="popup-static portlet box portlet-fullscreen inv_modal" *ngIf="showPHRMPOItemsbyPOId">

@@ -70,7 +70,7 @@ export class OutpatientMorbidityReportComponent {
     this.showPrint = true;
     var printContents = '<div style="text-align: center;">' + this.Header + ' </div>' + '<br>';
     printContents += '<div style="text-align: center">Outpatient Morbidity Report</div>' + '<br>';
-    printContents += '<b style="float: left">Date Range (BS)' + ':  From: ' + fromDate_string + '  To: ' + toDate_string + '<b style="float: right"> Printed On:' + this.nepCalendarService.ConvertEngToNepaliFormatted(printedDate, "YYYY-MM-DD") + 'BS (' + printedDate + ')' + '</b><br>';
+    printContents += '<b style="float: left">Date Range ' + ':  From: ' + this.fromDate + '  To: ' + this.toDate + '<b style="float: right"> Printed On: ' + printedDate + '</b><br>';
     printContents += '<b style="float: right"> Printed By :' + this.CurrentUser + '</b><br>';
     printContents += document.getElementById("dvPrintPage_OpMorbidityRpt").innerHTML;
     popupWindow = window.open('', '_blank', 'width=600,heigth=800,scrollbars=no, menubar=no,toolbar=no, location=no,status=no,titlebar=no');
@@ -138,8 +138,8 @@ export class OutpatientMorbidityReportComponent {
           fromDateNp = NepaliCalendarService.ConvertEngToNepaliFormatted_static(this.fromDate, '');
           toDateNp = NepaliCalendarService.ConvertEngToNepaliFormatted_static(this.toDate, '');
         }
-        let nepaliExportDate = NepaliCalendarService.ConvertEngToNepaliFormatted_static(moment().format('YYYY-MM-DD'), '');
-        dateRange = (this.fromDate.length > 0 && this.toDate.length > 0) ? `<tr><td><b>Date Range (BS): ${fromDateNp} To ${toDateNp}</b></td><td></td> <td ><b> Exported Date:${moment().format('YYYY-MM-DD')} (${nepaliExportDate} BS)<td></td><td></td><td><b> Exported By:${this.CurrentUser}</b></td></tr> <tr></tr>` : '';
+        //let nepaliExportDate = NepaliCalendarService.ConvertEngToNepaliFormatted_static(moment().format('YYYY-MM-DD'), '');
+        dateRange = (this.fromDate.length > 0 && this.toDate.length > 0) ? `<tr><td><b>Date Range (BS): ${this.fromDate} To ${this.toDate}</b></td><td></td> <td ><b> Exported Date:${moment().format('YYYY-MM-DD')} <td></td><td></td><td><b> Exported By:${this.CurrentUser}</b></td></tr> <tr></tr>` : '';
 
       CommonFunctions.ConvertHTMLTableToExcelForMedicalRecord(tableId, dateRange, workSheetName,
          Heading, filename, hospitalName, address, phoneNumber);

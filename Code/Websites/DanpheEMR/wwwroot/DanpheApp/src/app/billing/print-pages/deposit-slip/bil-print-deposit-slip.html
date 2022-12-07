@@ -25,7 +25,6 @@
           <div class="right">
             <p class="no-margin" style="text-align:right">
               Date: {{deposit.CreatedOn | DanpheDateTime:'format':'YYYY-MM-DD'}}
-              ({{localDate}})
             </p>
           </div>
         </div>
@@ -37,7 +36,7 @@
           </div>
           <div class="right">
             <p class="no-margin" style="text-align:right">
-              DOA: <b>{{deposit.AdmissionDate}} ({{doaLocalDate}})</b>
+              DOA: <b>{{deposit.AdmissionDate | DanpheDateTime:'format':'YYYY-MM-DD'}} </b>
             </p>
           </div>
         </div>
