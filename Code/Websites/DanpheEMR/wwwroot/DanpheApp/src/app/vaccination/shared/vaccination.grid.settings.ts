@@ -21,7 +21,8 @@ export default class VaccinationGridColumnSettings {
     // { headerName: "Ethnicity", field: "EthnicGroup", width: 80 },
     { headerName: "Address", field: "Address", width: 80 },
     //{ headerName: "Phone No.", field: "PhoneNumber", width: 80 },
-    { headerName: "Last Vis. Date", field: "VisitDateTime", width: 80 },
+    { headerName: "Last Vis. Date", field: "VisitDateTime", width: 80 
+     ,cellRenderer:VaccinationGridColumnSettings.vaccVisitDate,},
     { headerName: "Days Passed", field: "DaysPassed", width: 80 },
     {
       headerName: "Actions",
@@ -31,13 +32,16 @@ export default class VaccinationGridColumnSettings {
     }
   ];
 
-
-
+static vaccVisitDate(params)
+{
+  let date: string = params.data.VisitDateTime;
+  return moment(date).format("YYYY-MM-DD HH:mm");
+}
   //adds action buttons dynamically based on some rules.
   static VaccPatListActionRenderer(params) {
     let currVisit = params.data;
     let todaysdate = moment().format("YYYY-MM-DD");
-    let visitdate = moment(currVisit.VisitDateTime).format("YYYY-MM-DD");
+    let visitdate = moment(currVisit.VisitDateTime).format("YYYY-MM-DD HH:mm");
     //by default: print sticker wil be there in the action.
     let templateHtml = "";
 
@@ -63,7 +67,7 @@ export default class VaccinationGridColumnSettings {
 
 
   static vaccinationPatientReportGridColumns = [
-    { headerName: "Vacc. Date", field: "VaccinationDate", width: 30 },
+    { headerName: "Vacc. Date", field: "VaccinationDate", width: 30,cellRenderer:VaccinationGridColumnSettings.VaccDate },
     { headerName: "Vacc. Regd. No.", field: "VaccinationRegNo", width: 30 },
     { headerName: "Baby's Name", field: "ShortName", width: 70 },
     { headerName: "Age/Sex", field: "", width: 40, cellRenderer: VaccinationGridColumnSettings.AgeSexRenderer },
@@ -79,12 +83,12 @@ export default class VaccinationGridColumnSettings {
   ];
 
   static vaccinationAppointmentDetailsReportColumns = [
-    { headerName: "Date/Time", field: "VisitDateTime", width: 30 },
+    { headerName: "Date/Time", field: "VisitDateTime", width: 30 , cellRenderer: VaccinationGridColumnSettings.DateAndTime},
     { headerName: "Vacc. Regd. No.", field: "VaccinationRegNo", width: 30 },
     { headerName: "Baby's Name", field: "PatientName", width: 70 },
     { headerName: "Hospital No.", field: "PatientCode", width: 55 },
     { headerName: "Age/Sex", field: "", width: 40, cellRenderer: VaccinationGridColumnSettings.AgeSexRenderer },
-    { headerName: "Baby's DOB", field: "DateOfBirth", width: 50, },
+    { headerName: "Baby's DOB", field: "DateOfBirth", width: 50, cellRenderer: VaccinationGridColumnSettings.BabyDOB},
     { headerName: "Mother's Name", field: "MotherName", width: 50 },
     { headerName: "Ethnicity", field: "EthnicGroup", width: 40 },
     { headerName: "District", field: "DistrictName", width: 40 },
@@ -93,6 +97,22 @@ export default class VaccinationGridColumnSettings {
     { headerName: "UserName", field: "UserName", width: 40 },
   ];
 
+  static DateAndTime(params)
+  {
+    let date : string = params.data.VisitDateTime;
+    return moment(date).format("YYYY-MM-DD");
+  }
+  static BabyDOB(params)
+  {
+    let date : string = params.data.DateOfBirth;
+    return moment(date).format("YYYY-MM-DD");
+  }
+
+  static VaccDate(params)
+  {
+    let date : string = params.data.VaccinationDate;
+    return moment(date).format("YYYY-MM-DD");
+  }
   static DOBRenderer(params) {
     let date: string = params.data.DateOfBirth;
     return moment(date).format("YYYY-MM-DD");
