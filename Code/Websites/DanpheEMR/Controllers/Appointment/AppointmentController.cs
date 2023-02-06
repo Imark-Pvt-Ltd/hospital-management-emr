@@ -37,7 +37,7 @@ namespace DanpheEMR.Controllers
 {
 
     public class AppointmentController : CommonController
-    {
+    { 
         public string InvoiceCode = "BL";//get this from parameters when possible.
         public AppointmentController(IOptions<MyConfiguration> _config) : base(_config)
         {
