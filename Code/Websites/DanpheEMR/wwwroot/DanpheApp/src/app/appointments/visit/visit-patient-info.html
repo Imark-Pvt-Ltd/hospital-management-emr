@@ -99,8 +99,8 @@
           </select>
                     <span class="color-red font-sm" *ngIf="patient.IsDirty('CountryId')" [hidden]="patient.IsValidCheck('CountryId','required')"> Country is required.</span>
                 </div>
-                <div *ngIf="patient.CountryId == 1" class="col-md-3 pr-0">
-                    <input danphe-auto-complete id="ddlCountrySubdivision" class="form-control" formControlName="CountrySubDivisionId" [(ngModel)]="countrySubDivision" [list-formatter]="districtListFormatter" [source]="countrySubDivisions" placeholder="District" display-property-name="CountrySubDivisionName"
+                <div  class="col-md-3 pr-0">
+                    <input danphe-auto-complete id="ddlCountrySubdivision" class="form-control" formControlName="CountrySubDivisionId" [(ngModel)]="countrySubDivision" [list-formatter]="districtListFormatter" [source]="countrySubDivisions" placeholder="County" display-property-name="CountrySubDivisionName"
                         value-property-name=null (focusout)="AssignSelectedDistrict()" onClick="this.select();" match-formatted="true" [grid-sort]="'CountrySubDivisionName'" max-num-list="10" (keyup.enter)="showMunicipality? SetFocusById('municipality') : SetFocusById('address')" />
                     <span class="color-red font-sm" *ngIf="patient.IsDirty('CountrySubDivisionId') && patient.CountryId == 1" [hidden]="patient.IsValidCheck('CountrySubDivisionId','required')"> District/State is required.</span>
                 </div>

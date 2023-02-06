@@ -181,7 +181,7 @@
               Deposit Deduct/Return: {{receipt.DepositDeductAmount | number: "1.2-2"}}
               <br />
             </span>
-            <span *ngIf="receipt.Tender > 0 && receipt.PaymentMode != 'credit'">Tender: {{receipt.Tender | number :
+            <span *ngIf="receipt.Tender > 0 && receipt.PaymentMode != 'credit'">CashReceived: {{receipt.Tender | number :
               "1.2-2"}} <br /></span>
             <span *ngIf="receipt.Change && receipt.PaymentMode != 'credit'">Change/Return: {{receipt.Change | number:
               "1.2-2"}}<br /></span>

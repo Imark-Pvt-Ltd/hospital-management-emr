@@ -273,7 +273,7 @@
                     </td>
                   </tr> -->
                   <tr *ngIf="model.PayType != 'credit' && model.ToBePaid">
-                    <td class="bill-child">Tender:</td>
+                    <td class="bill-child">Cash Received:</td>
                     <td>
                       <input type="number" [(ngModel)]="model.Tender" (ngModelChange)="ChangeTenderAmount()"
                         name="Tender" placeholder="Rupees" [disabled]="model.PaymentMode == 'credit'"

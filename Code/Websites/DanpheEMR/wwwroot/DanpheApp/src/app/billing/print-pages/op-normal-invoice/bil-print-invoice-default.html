@@ -259,7 +259,7 @@
             Deposit: [Deducted: {{invoice.InvoiceInfo.DepositUsed}}/Balance:{{invoice.InvoiceInfo.DepositBalance}}]
           </span>
           <span *ngIf="invoice.InvoiceInfo.Tender > 0">
-            Tender: {{invoice.InvoiceInfo.Tender | number : "1.2-2"}} <br />
+            Cash Received: {{invoice.InvoiceInfo.Tender | number : "1.2-2"}} <br />
           </span>
           <span *ngIf="invoice.InvoiceInfo.Change">
             Change/Return: {{invoice.InvoiceInfo.Change}}<br />

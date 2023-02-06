@@ -247,7 +247,7 @@
             Deposit: [Deducted: {{receipt.DepositUsed}}/Balance:{{receipt.DepositBalance}}]
           </span>
           <span *ngIf="receipt.Tender > 0">
-            Tender: {{receipt.Tender | number : "1.2-2"}} <br />
+            Cash Received: {{receipt.Tender | number : "1.2-2"}} <br />
           </span>
           <span *ngIf="receipt.Change">
             Change/Return: {{receipt.Change}}<br />

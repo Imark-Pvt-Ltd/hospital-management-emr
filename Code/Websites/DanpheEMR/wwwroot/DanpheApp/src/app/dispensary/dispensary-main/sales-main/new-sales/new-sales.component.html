@@ -322,7 +322,7 @@
                                     <td></td>
                                 </tr>
                                 <tr [hidden]="(IsCurrentDispensaryInsurace == true && currSale.PaymentMode == 'credit')||(currSale.PaymentMode == 'credit')">
-                                    <td>Tender:</td>
+                                    <td>Cash Received:</td>
                                     <td>
                                         <div class="form-group">
                                             <input #tender onwheel="this.blur()" onClick="this.select();" class="form-control" [ngModelOptions]="{standalone: true}" [disabled]="currSale.PaymentMode == 'credit'" [(ngModel)]="currSale.Tender" (ngModelChange)="ChangeTenderAmount()" id="Tender" name="tender" type="number" (keyup.enter)="GoToNextButton(printInvoice)">
