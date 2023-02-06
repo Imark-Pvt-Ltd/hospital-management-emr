@@ -37,9 +37,7 @@ namespace DanpheEMR.Controllers
 {
 
     public class AppointmentController : CommonController
-    {
-        //comment added for testing of git branches: sud-6Feb2023
-
+    { 
         public string InvoiceCode = "BL";//get this from parameters when possible.
         public AppointmentController(IOptions<MyConfiguration> _config) : base(_config)
         {
